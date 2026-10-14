@@ -1,4 +1,6 @@
-# Tienda API — Tutorial 05
+# Tienda API — Tutorial 06
+
+Migración incremental con Strangler Pattern: Django atiende la API v1 y el microservicio Flask atiende la compra en la API v2.
 
 Proyecto preparado para el laboratorio de Docker, Gunicorn, Nginx y despliegue en AWS EC2. La arquitectura usa tres servicios: PostgreSQL, Django servido por Gunicorn y Nginx como proxy inverso.
 

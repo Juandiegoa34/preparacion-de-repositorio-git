@@ -3,7 +3,7 @@ from flask import Flask, jsonify, request
 app = Flask(__name__)
 
 
-@app.route("/api/v2/comprar", methods=["POST"])
+@app.post("/api/v2/comprar")
 def realizar_compra():
     data = request.get_json(silent=True) or {}
     producto_id = data.get("producto_id")
@@ -23,9 +23,16 @@ def realizar_compra():
 
 
 @app.get("/health")
-def health():
+def health_check():
     return jsonify({"status": "ok", "servicio": "pagos_flask"})
 
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
+
+
+def create_app():
+    return app
+
+
+application = app
